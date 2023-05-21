@@ -1,0 +1,7 @@
+①Java>Installed JREsを確認　Java11に設定
+②General>Appearance>Colors and Fonts
+　必要ならフォントを変更
+③Workspace Text file encodingを「UTF-8」に変更
+
+④スタート用プロジェクトをダウンロードする
+https://github.com/trainocate-repo/SpringBeginnerEasy

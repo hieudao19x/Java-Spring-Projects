@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;service.MemberServiceImp&apos; to &apos;MemberServiceImpl&apos;&#x0D;&#x0A;- Original project: &apos;Review&apos;&#x0D;&#x0A;- Original element: &apos;service.MemberServiceImp&apos;&#x0D;&#x0A;- Renamed element: &apos;service.MemberServiceImpl&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;MemberServiceImp&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;service{MemberServiceImp.java[MemberServiceImp" matchStrategy="1" name="MemberServiceImpl" qualified="false" references="true" similarDeclarations="false" stamp="1683474445633" textual="false" version="1.0"/>
+</session>

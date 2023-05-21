@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.buildship.ui.wizard.project.import">
+		<item key="project_location" value="C:\SpringBeginner\SpringBasicSource\WebBeginnerStarter"/>
+		<item key="build_scans" value="true"/>
+		<item key="auto_sync" value="true"/>
+		<item key="gradle_distribution" value="GRADLE_DISTRIBUTION(WRAPPER)"/>
+	</section>
+</section>
