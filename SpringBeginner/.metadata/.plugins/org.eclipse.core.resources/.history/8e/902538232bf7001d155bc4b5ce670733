@@ -1,6 +1,0 @@
-package com.example.demo.app;
-
-@Controller
-public class SampleController {
-
-}

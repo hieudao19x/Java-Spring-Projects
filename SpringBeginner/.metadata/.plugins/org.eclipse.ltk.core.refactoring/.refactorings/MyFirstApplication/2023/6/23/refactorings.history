@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;schema.sql&apos; to &apos;MyFirstApplication/src/main/resources&apos;&#x0D;&#x0A;- Original project: &apos;MyFirstApplication&apos;&#x0D;&#x0A;- Destination element: &apos;MyFirstApplication/src/main/resources&apos;&#x0D;&#x0A;- Original element: &apos;schema.sql&apos;" description="Copy file" destination="/src\/main\/resources=/gradle_scope=/main=/=/gradle_used_by_scope=/main,test=/" element1="src/main/resources/schema.sql" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1685679626969" units="0" version="1.0"/>
+</session>

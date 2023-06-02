@@ -1,0 +1,7 @@
+package com.example.demo.app.inquiry;
+
+@Controller
+@RequestMapping("/inquiry")
+public class InquiryController {
+
+}
