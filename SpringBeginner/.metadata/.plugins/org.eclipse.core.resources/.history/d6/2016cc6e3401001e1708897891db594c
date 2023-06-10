@@ -1,6 +1,0 @@
-package com.example.demo.app.inquiry;
-
-@Controller
-public class InquiryController {
-
-}

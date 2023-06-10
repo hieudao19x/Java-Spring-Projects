@@ -1,7 +1,0 @@
-package com.example.demo.app.inquiry;
-
-@Controller
-@RequestMapping
-public class InquiryController {
-
-}
