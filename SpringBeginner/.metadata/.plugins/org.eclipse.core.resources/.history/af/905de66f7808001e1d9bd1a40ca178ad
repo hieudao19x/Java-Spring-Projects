@@ -1,0 +1,7 @@
+package com.example.demo.service;
+
+public interface InquiryService {
+
+	void save(Inquiry inquiry);
+	List<Inquiry> getAll();
+}
