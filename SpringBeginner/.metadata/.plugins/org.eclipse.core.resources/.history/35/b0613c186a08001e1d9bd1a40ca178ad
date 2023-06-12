@@ -1,6 +1,0 @@
-package com.example.demo.dao;
-
-public interface InquiryDao {
-
-	void insertInquiry(Inquiry inquiry);
-}
