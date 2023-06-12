@@ -20,12 +20,15 @@ public class InquiryDaoImpl implements InquiryDao {
 	public InquiryDaoImpl(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;
 	}
+	
+	//　お問い合わせにSQLを通じて該当フィールドをインサートする
 	@Override
 	public void insertInquiry(Inquiry inquiry) {
-		jdbcTemplate.update("INSERT INTO inquiry(name,email, contents, created) VALUES(?, ?, ?, ?)",
+		jdbcTemplate.update("INSERT INTO inquiry(name,　email, contents, created) VALUES(?, ?, ?, ?)",
 				inquiry.getName(), inquiry.getEmail(), inquiry.getContents(), inquiry.getCreated());
 	}
-
+	
+	//　マップしたリストを繰り返して、一つ一つの要素が新しいお問い合わせリストに追加する
 	@Override
 	public List<Inquiry> getAll() {
 		String sql = "SELECT id, name, email, contents, created FROM inquiry";

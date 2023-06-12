@@ -51,6 +51,7 @@ public class InquiryController {
 		return "inquiry/confirm";
 	}
 	
+	//　入力した値をバリデーションして、エラーが発生する場合、フォームに返す、そうでない場合はお問い合わせにセットする
 	@PostMapping("/complete")
 	public String complete(@Validated InquiryForm inquiryForm,
 			BindingResult result,

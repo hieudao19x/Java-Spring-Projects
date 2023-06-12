@@ -19,9 +19,10 @@ public class SampleController {
 	public SampleController(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;
 	}
+	
+	//　モデルに該当Attributeを追加する
 	@GetMapping("/test")
 	public String test(Model model) {
-		
 		String sql = "SELECT id, name, email "
 				+ "FROM inquiry WHERE id = 1";
 		Map<String, Object> map = jdbcTemplate.queryForMap(sql);
