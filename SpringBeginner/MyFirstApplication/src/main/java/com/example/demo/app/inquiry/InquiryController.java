@@ -40,7 +40,9 @@ public class InquiryController {
 	}
 	
 	@GetMapping("/form")
-	public String form(InquiryForm inquiryForm, Model model, @ModelAttribute("complete") String complete) {
+	public String form(InquiryForm inquiryForm, 
+			Model model, 
+			@ModelAttribute("complete") String complete) {
 		model.addAttribute("title", "Inquiry Form");
 		return "inquiry/form";
 	}
@@ -56,6 +58,7 @@ public class InquiryController {
 	public String confirm(@Validated InquiryForm inquiryForm,
 			BindingResult result,
 			Model model) {
+		model.addAttribute("inquiryForm", inquiryForm);
 		if(result.hasErrors()) {
 			model.addAttribute("title", "Inquiry Form");
 			return "inquiry/form";
@@ -83,6 +86,7 @@ public class InquiryController {
 		inquiry.setCreated(LocalDateTime.now());
 		
 		inquiryService.save(inquiry);
+		
 		redirectAttributes.addFlashAttribute("complete","Registered!");
 		return "redirect:/inquiry/form";
 	}

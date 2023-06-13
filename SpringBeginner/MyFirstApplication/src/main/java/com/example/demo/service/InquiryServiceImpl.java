@@ -21,7 +21,6 @@ public class InquiryServiceImpl implements InquiryService {
 	@Override
 	public void save(Inquiry inquiry) {
 		dao.insertInquiry(inquiry);
-
 	}
 
 	@Override

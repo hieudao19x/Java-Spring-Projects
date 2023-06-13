@@ -23,10 +23,11 @@ public class SurveyDaoImpl implements SurveyDao{
 
 	@Override
 	public int insertSurvey(Survey survey) {
-		return jdbcTemplate.update("INSERT INTO survey(age, satisfaction, comment, created) VALUES(?, ?, ?, ?)",
+		return jdbcTemplate.update("INSERT INTO survey(age,satisfaction,comment,created) VALUES(?,?,?,?)",
 				new Object[] { survey.getAge(), survey.getSatisfaction(), survey.getComment(), survey.getCreated() });	
 	}
 
+	// サーベイリストを読み込む
 	@Override
 	public List<Survey> getAll() {
 		String sql = "SELECT id, age, satisfaction, comment, created FROM survey";

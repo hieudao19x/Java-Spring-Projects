@@ -18,7 +18,7 @@
 	<input type="radio" name="satisfaction" value="4" th:checked="*{satisfaction == 4}">4
 	<input type="radio" name="satisfaction" value="5" th:checked="*{satisfaction == 5}">5<br>
 	<div th:if="${#fields.hasErrors('satisfaction')}" th:errors="*{satisfaction}"></div>
-	<label for="comment">Comment　:</label>
+	<label for="comment">Comment:</label>
 	<textarea name="comment" id="comment" rows="3" cols="40"  th:field="*{comment}"></textarea><br>
 	<div th:if="${#fields.hasErrors('comment')}" th:errors="*{comment}"></div>
 	<input type="submit" value="Confirm">

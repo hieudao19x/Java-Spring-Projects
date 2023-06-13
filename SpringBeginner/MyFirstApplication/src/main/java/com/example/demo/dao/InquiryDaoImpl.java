@@ -1,6 +1,7 @@
 package com.example.demo.dao;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -8,6 +9,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import com.example.demo.entity.Inquiry;
 
@@ -24,7 +26,7 @@ public class InquiryDaoImpl implements InquiryDao {
 	//　お問い合わせにSQLを通じて該当フィールドをインサートする
 	@Override
 	public void insertInquiry(Inquiry inquiry) {
-		jdbcTemplate.update("INSERT INTO inquiry(name,　email, contents, created) VALUES(?, ?, ?, ?)",
+		jdbcTemplate.update("INSERT INTO inquiry(name,email,contents,created) VALUES(?,?,?,?)",
 				inquiry.getName(), inquiry.getEmail(), inquiry.getContents(), inquiry.getCreated());
 	}
 	
