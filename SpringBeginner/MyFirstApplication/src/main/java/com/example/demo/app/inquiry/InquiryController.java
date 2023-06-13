@@ -1,6 +1,7 @@
 package com.example.demo.app.inquiry;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,6 +28,17 @@ public class InquiryController {
 		this.inquiryService = inquiryService;
 	}
 	
+	// モデルに該当属性を追加して、画面のインデックスに返す
+	@GetMapping
+	public String index(Model model) {
+		List<Inquiry> list = inquiryService.getAll();
+		
+		model.addAttribute("inquiryList", list);
+		model.addAttribute("title", "Inquiry Index");
+		
+		return "inquiry/index";
+	}
+	
 	@GetMapping("/form")
 	public String form(InquiryForm inquiryForm, Model model, @ModelAttribute("complete") String complete) {
 		model.addAttribute("title", "Inquiry Form");
@@ -39,6 +51,7 @@ public class InquiryController {
 		return "inquiry/form";
 	}
 	
+	//　登録した後、コンファームページに遷移する
 	@PostMapping("/confirm")
 	public String confirm(@Validated InquiryForm inquiryForm,
 			BindingResult result,
@@ -51,7 +64,7 @@ public class InquiryController {
 		return "inquiry/confirm";
 	}
 	
-	//　入力した値をバリデーションして、エラーが発生する場合、フォームに返す、そうでない場合はお問い合わせにセットする
+	//　入力した値をバリデーションして、エラーが発生する場合、フォームに返す、そうでない場合はお問い合わせを登録する
 	@PostMapping("/complete")
 	public String complete(@Validated InquiryForm inquiryForm,
 			BindingResult result,

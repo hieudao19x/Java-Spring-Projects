@@ -20,7 +20,7 @@ public class SampleController {
 		this.jdbcTemplate = jdbcTemplate;
 	}
 	
-	//　モデルに該当Attributeを追加する
+	//　モデルに該当属性を追加する
 	@GetMapping("/test")
 	public String test(Model model) {
 		String sql = "SELECT id, name, email "
@@ -30,5 +30,5 @@ public class SampleController {
 		model.addAttribute("name", map.get("name"));
 		model.addAttribute("email", map.get("email"));
 		return "test";
-		}
+	}
 }
