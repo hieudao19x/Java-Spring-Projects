@@ -66,16 +66,22 @@ public class TaskController {
     	@Valid @ModelAttribute TaskForm taskForm,
         BindingResult result,
         Model model) {
-
+    	
+    	//TaskFormのデータをTaskに格納
+//    	Task task = new Task();
+//    	task.setUserId(1);
+//    	task.setTypeId(taskForm.getTypeId());
+//    	task.setTitle(taskForm.getTitle());
+//    	task.setDetail(taskForm.getDetail());
+//    	task.setDeadline(taskForm.getDeadline());
+    	
+    	Task task = makeTask(taskForm, 0);
+    	
         if (!result.hasErrors()) {
-        	//削除してください
-        	Task task = null;
-
-        	//TaskFormのデータをTaskに格納
 
         	//一件挿入後リダイレクト
-
-            return "";
+        	taskService.insert(task);
+            return "redirect:/task";
         } else {
             taskForm.setNewTask(true);
             model.addAttribute("taskForm", taskForm);
