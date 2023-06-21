@@ -106,12 +106,17 @@ public class TaskController {
         Model model) {
 
     	//Taskを取得(Optionalでラップ)
-
+    	Optional<Task> taskOpt = taskService.getTask(id);
+    	
         //TaskFormへの詰め直し
+    	Optional<TaskForm> taskFormOpt = taskOpt.map(t -> makeTaskForm(t));
 
         //TaskFormがnullでなければ中身を取り出し
+    	if(taskFormOpt.isPresent()) {
+    		taskForm = taskFormOpt.get();
+    	}
 
-        model.addAttribute("taskForm", "");
+        model.addAttribute("taskForm", taskForm);
         List<Task> list = taskService.findAll();
         model.addAttribute("list", list);
         model.addAttribute("taskId", id);
@@ -135,13 +140,16 @@ public class TaskController {
     	@RequestParam("taskId") int taskId,
     	Model model,
     	RedirectAttributes redirectAttributes) {
+    	
+    	//TaskFormのデータをTaskに格納
+    	Task task = makeTask(taskForm, taskId);
 
         if (!result.hasErrors()) {
-        	//TaskFormのデータをTaskに格納
 
         	//更新処理、フラッシュスコープの使用、リダイレクト（個々の編集ページ）
-
-            return "" ;
+        	taskService.update(task);
+        	redirectAttributes.addFlashAttribute("complete", "変更が完了しました");
+            return "redirect:/task/" + taskId;
         } else {
             model.addAttribute("taskForm", taskForm);
             model.addAttribute("title", "タスク一覧");
@@ -161,8 +169,9 @@ public class TaskController {
     	Model model) {
 
     	//タスクを一件削除しリダイレクト
+    	taskService.deleteById(id);
 
-        return "";
+        return "redirect:/task";
     }
 
     /**
