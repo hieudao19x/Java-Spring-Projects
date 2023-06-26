@@ -54,7 +54,7 @@ public class TaskServiceImpl implements TaskService {
 
 		//Taskを更新 idがなければ例外発生
 		if (dao.deleteById(id) == 0) {
-			throw new TaskNotFoundException("更新するタスクが存在しません");
+			throw new TaskNotFoundException("削除するタスクが存在しません");
 		} 
 
 	}
